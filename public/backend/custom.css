@@ -1,0 +1,26 @@
+@font-face {
+	font-family: 'nasim';
+	src: url('css/fonts/Shabnam-Light.eot?#') format('eot'),  /* IE6–8 */
+	url('css/fonts/Shabnam-Light.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+	url('css/fonts/Shabnam-Light.ttf') format('truetype');  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
+}
+*{
+	font-family: nasim;
+}
+.alert{
+position: absolute;
+bottom: 0;
+z-index: 10;
+text-align: right;
+min-width: 300px;
+}
+.alert .close{
+	float: left;
+}
+.alert li{
+	list-style: decimal;
+}
+h3{
+	font-family: unset !important;
+    font-weight: bold !important;
+}

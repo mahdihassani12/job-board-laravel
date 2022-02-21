@@ -1,0 +1,417 @@
+@font-face {
+  font-family: 'nasim';
+  src: url('Shabnam-Light.eot?#') format('eot'),  /* IE6–8 */
+  url('Shabnam-Light.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+  url('Shabnam-Light.ttf') format('truetype');  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
+}
+*{
+  font-family: nasim !important;
+}
+
+.login_register {
+      background-color: #56baed;
+    }
+
+    .login_register {
+      font-family: "Poppins", sans-serif;
+      height: 100vh;
+    }
+
+    .login_register a {
+      color: #92badd;
+      display:inline-block;
+      text-decoration: none;
+      font-weight: 400;
+    }
+
+    .login_register h2 {
+      text-align: center;
+      font-size: 16px;
+      font-weight: 600;
+      text-transform: uppercase;
+      display:inline-block;
+      margin: 40px 8px 10px 8px; 
+      color: #cccccc;
+    }
+
+
+
+    /* STRUCTURE */
+
+    .login_register .wrapper {
+      display: flex;
+      align-items: center;
+      flex-direction: column; 
+      justify-content: center;
+      width: 100%;
+      min-height: 100%;
+      padding: 20px;
+    }
+
+    .login_register #formContent {
+      -webkit-border-radius: 10px 10px 10px 10px;
+      border-radius: 10px 10px 10px 10px;
+      background: #fff;
+      padding: 30px;
+      width: 90%;
+      max-width: 450px;
+      position: relative;
+      padding: 0px;
+      -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+      box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+      text-align: center;
+    }
+
+    #formFooter {
+      background-color: #f6f6f6;
+      border-top: 1px solid #dce8f1;
+      padding: 25px;
+      text-align: center;
+      -webkit-border-radius: 0 0 10px 10px;
+      border-radius: 0 0 10px 10px;
+    }
+
+    /* TABS */
+
+    .login_register h2.inactive {
+      color: #cccccc;
+    }
+
+    .login_register h2.active {
+      color: #0d0d0d;
+      border-bottom: 2px solid #5fbae9;
+    }
+
+
+
+    /* FORM TYPOGRAPHY*/
+
+    .login_register input[type=button], input[type=submit], input[type=reset]  {
+      background-color: #56baed;
+      border: none;
+      color: white;
+      padding: 15px 80px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      text-transform: uppercase;
+      font-size: 13px;
+      -webkit-box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+      box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+      -webkit-border-radius: 5px 5px 5px 5px;
+      border-radius: 5px 5px 5px 5px;
+      margin: 5px 20px 40px 20px;
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      -ms-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .login_register input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
+      background-color: #39ace7;
+    }
+
+    .login_register input[type=button]:active, input[type=submit]:active, input[type=reset]:active  {
+      -moz-transform: scale(0.95);
+      -webkit-transform: scale(0.95);
+      -o-transform: scale(0.95);
+      -ms-transform: scale(0.95);
+      transform: scale(0.95);
+    }
+
+    .login_register input[type=text] , select , input[type=email] , input[type=password]{
+      background-color: #f6f6f6;
+      border: none;
+      color: #0d0d0d;
+      padding: 15px 32px;
+      text-align: left;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 5px;
+      width: 85%;
+      border: 2px solid #f6f6f6;
+      -webkit-transition: all 0.5s ease-in-out;
+      -moz-transition: all 0.5s ease-in-out;
+      -ms-transition: all 0.5s ease-in-out;
+      -o-transition: all 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out;
+      -webkit-border-radius: 5px 5px 5px 5px;
+      border-radius: 5px 5px 5px 5px;
+    }
+
+    .login_register input[type=text]:focus , select:focus , input[type=email]:focus , input[type=password]:focus{
+      background-color: #fff;
+      border-bottom: 2px solid #5fbae9;
+    }
+
+    .login_register input[type=text]:placeholder {
+      color: #cccccc;
+    }
+
+
+
+    /* ANIMATIONS */
+
+    /* Simple CSS3 Fade-in-down Animation */
+    .fadeInDown {
+      -webkit-animation-name: fadeInDown;
+      animation-name: fadeInDown;
+      -webkit-animation-duration: 1s;
+      animation-duration: 1s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+    }
+
+    @-webkit-keyframes fadeInDown {
+      0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+      }
+      100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+      }
+    }
+
+    @keyframes fadeInDown {
+      0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+      }
+      100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+      }
+    }
+
+    /* Simple CSS3 Fade-in Animation */
+    @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+    @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+    @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+    .fadeIn {
+      opacity:0;
+      -webkit-animation:fadeIn ease-in 1;
+      -moz-animation:fadeIn ease-in 1;
+      animation:fadeIn ease-in 1;
+
+      -webkit-animation-fill-mode:forwards;
+      -moz-animation-fill-mode:forwards;
+      animation-fill-mode:forwards;
+
+      -webkit-animation-duration:1s;
+      -moz-animation-duration:1s;
+      animation-duration:1s;
+    }
+
+    .fadeIn.first {
+      -webkit-animation-delay: 0.4s;
+      -moz-animation-delay: 0.4s;
+      animation-delay: 0.4s;
+    }
+
+    .fadeIn.second {
+      -webkit-animation-delay: 0.6s;
+      -moz-animation-delay: 0.6s;
+      animation-delay: 0.6s;
+    }
+
+    .fadeIn.third {
+      -webkit-animation-delay: 0.8s;
+      -moz-animation-delay: 0.8s;
+      animation-delay: 0.8s;
+    }
+
+    .fadeIn.fourth {
+      -webkit-animation-delay: 1s;
+      -moz-animation-delay: 1s;
+      animation-delay: 1s;
+    }
+
+    /* Simple CSS3 Fade-in Animation */
+    .underlineHover:after {
+      display: block;
+      left: 0;
+      bottom: -10px;
+      width: 0;
+      height: 2px;
+      background-color: #56baed;
+      content: "";
+      transition: width 0.2s;
+    }
+
+    .underlineHover:hover {
+      color: #0d0d0d;
+    }
+
+    .underlineHover:hover:after{
+      width: 100%;
+    }
+
+    /* OTHERS */
+
+    *:focus {
+        outline: none;
+    } 
+
+    #icon {
+      width:60%;
+    }
+
+    * {
+      box-sizing: border-box;
+      direction: rtl;
+    }
+    .login_register .submit{
+      cursor: pointer;
+    }
+    .header-area .main-header-area .Appointment .phone_num{
+      margin-left: 25px;
+    }
+    .footer{
+      text-align: right;
+      direction: rtl;
+    }
+     .contact_btn{
+        display: inline-block;
+        color: #fff;
+        background: #00d363;
+        padding: 6px 30px;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+    .footer .socail_links ul li a i{
+        font-family: fontawesome !important;
+        color: #fff;
+    }
+
+
+.alert{
+position: absolute;
+bottom: 0;
+z-index: 10;
+text-align: right;
+min-width: 300px;
+}
+.alert .close{
+float: left;
+}
+.alert li{
+list-style: decimal;
+}
+.close {
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    color: #222;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  .footer .footer_top{
+    padding-top: 50px;
+    padding-bottom: 40px;
+  }
+  .footer .copy-right_text .copy_right, .footer .footer_top .footer_widget .newsletter_text{
+    font-size: 16px;
+    font-family: nasim !important;
+  }
+
+/** Responsive styles **/
+
+@media (min-width: 1200px) {
+    
+}
+@media (min-width: 1024px) {
+    
+}
+@media (max-width: 768px){	
+	.align-items-center{
+    text-align: center;
+  }
+  .brouse_job{
+    text-align: center !important;
+    margin-top: 30px;
+  }
+  .top_companies_area .section_title{
+    padding-top: 15px;
+  }
+  .blogs .section_title{
+    padding-top: 15px;
+  } 
+  .slider_area .single_slider{
+    height: 400px;
+  }
+  .single_slider  .submit_btn input[type=submit]{
+    padding: 0px 78px;
+  }
+  .top_companies_area .single_company .thumb{
+    margin: auto;
+    width: 70%;
+  }
+  .footer .footer_top{
+    text-align: center;
+  }
+}
+@media (max-width: 767px){	
+	
+}
+@media (max-width: 425px) {
+  .single_slider .submit_btn{
+    position: absolute;
+    left: 0;
+    top: 270px;
+  }
+  .job_listing_area .brouse_job, .top_companies_area .brouse_job{
+    text-align: center !important;
+  }
+  .blogs .section_title h3{
+    text-align: center !important;
+  }
+  .job_listing_area .job_lists .single_jobs{
+    display: flex !important;
+  }
+  .job_listing_area .job_lists .single_jobs .jobs_left .thumb{
+    float: unset;
+  }
+  .job_listing_area .job_lists .single_jobs .jobs_left .jobs_conetent{
+    float: unset;
+  }
+  .job_listing_area .job_lists .single_jobs .jobs_left .jobs_conetent h4{
+    margin-top: 35px;
+    margin-bottom: unset;
+    margin-right: 52px;
+  }
+  .job_listing_area .job_lists .single_jobs .jobs_right .apply_now{
+    text-align: center;
+  }
+  .single_jobs .jobs_right{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .job_listing_area .job_lists .single_jobs .jobs_left{
+    overflow: unset;
+  }
+  .job_listing_area .job_lists .single_jobs .jobs_left .thumb{
+    height: 50px;
+  }
+  .jobs_left .thumb img{
+    width: 70% !important;
+  }
+}
+@media (max-width: 375px){
+    
+}
+@media (max-width: 320px){
+    
+}
+
