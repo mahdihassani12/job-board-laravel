@@ -62,26 +62,20 @@
 		          		مراجع
 			          	</a>
 			        </li>
-			        <li class="has-dropdown">
-		          		<a data-toggle="tab" href="#">
+					<li>
+						<a href="{{ route('message.index',['user_id' => $id ]) }}">
 		          			<i class="fa fa-comments "></i>
 		          			پیام ها
-							<i class="fa fa-angle-down"></i>
 			          	</a>
-			          	<ul class="dropdown">
-			          		<li>
-			          			<a href="{{ route('message.index',['user_id' => $id ]) }}" class="pull-right">
-								  <strong>پیام ها</strong>
-								</a> 
-								<span> {{ $messages->count() }} </span>
-			          		</li>
-			          		<li>
-								<a href="{{ route('message.index',['status' => 'unseen' ,'user_id' => $user->id ]) }}" class="pull-right">
-								  <strong>پیام های خوانده نشده</strong>
-								</a> <span> {{ $unseen_messages->count() }} </span>
-							</li>
-			          	</ul>
-			        </li>
+						<span> {{ $messages->count() }} </span>
+					</li>
+					<li>
+						<a href="{{ route('message.index',['status' => 'unseen' ,'user_id' => $user->id ]) }}">
+		          			<i class="fa fa-comments "></i>
+		          			پیام های خوانده نشده
+			          	</a>
+						<span> {{ $unseen_messages->count() }} </span>
+					</li>
 			        <li>
 		          		<a data-toggle="tab" href="#settings">
 		          			<i class="fa fa-cogs "></i>
