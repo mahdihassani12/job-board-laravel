@@ -59,10 +59,11 @@
                     <div class="single_candidates text-center">
                         <div class="thumb">
 							@if($student->profile_image)
-                                <img src='{{ url("/uploads/student_meta/$student->profile_image") }}' 
+                               <img src='{{ url("public/uploads/student_meta/$student->profile_image") }}'
                                      alt="Admin" class="rounded-circle" width="150">
                             @else
-                                <img src='{{ url("/uploads/images/author.png") }}' alt="Admin" class="rounded-circle" width="150">
+                                <img src='{{ url("public/uploads/images/author.png") }}' 
+                                     alt="Admin" width="150">
                             @endif
                         </div>
                         @if($student->firstName)
