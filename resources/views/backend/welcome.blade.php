@@ -1,14 +1,6 @@
 @extends('backend.layouts.app')
 @section('main_content')
-<?php 
-  $acceptedStudents = DB::table('students')->where('accepted','=','1')->count();
-  $posts = DB::table('posts')->count();
-  $students = DB::table('students')->count();
-  $companies = DB::table('companies')->count();
-  
-  $pending_users = DB::table('users')->orderby('id','DESC')->where('status','pending')->paginate(10);
-  $messages = DB::table('contact_messages')->orderBy('id','DESC')->where('status','unseen')->paginate(10);
-?>
+
 	<div>
 	 <div class="row">
 		<div class="col-lg-3 col-xs-6">

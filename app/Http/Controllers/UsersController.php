@@ -16,6 +16,7 @@ use App\Skill;
 use App\faculty;
 use App\department;
 use App\Enroll;
+use App\contactMessages;
 use Illuminate\Http\Request;
 
 class UsersController extends Controller
@@ -41,12 +42,35 @@ class UsersController extends Controller
         $unseen_messages = Message::where('user_id', '=', $id)->where('status', '=', 'unseen')
                                                                       ->get();
 
-        return view('frontend.users.update',
-               compact(['id', 'student_user', 'user', 'documents', 'references', 'experiences', 'departments', 'faculties','student_id','skills','messages', 'unseen_messages']));
+        return view('frontend.users.update')->with('id',$id)
+                                            ->with('student_user',$student_user)
+                                            ->with('student_id',$student_id)
+                                            ->with('user',$user)
+                                            ->with('skills',$skills)
+                                            ->with('documents',$documents)
+                                            ->with('references',$references)
+                                            ->with('experiences',$experiences)
+                                            ->with('departments',$departments)
+                                            ->with('faculties',$faculties)
+                                            ->with('messages',$messages)
+                                            ->with('unseen_messages',$unseen_messages);
     }
 
     public function admin_profile(){
-        return view('backend.welcome');
+
+        $posts = Post::count();
+        $students = Student::count();
+        $companies = Company::count();
+        $acceptedStudents = Student::where('accepted','=','1')->count();
+        $pending_users = User::orderby('id','DESC')->where('status','pending')->paginate(10);
+        $messages = contactMessages::orderBy('id','DESC')->where('status','unseen')->paginate(10);
+
+        return view('backend.welcome')->with('acceptedStudents',$acceptedStudents)
+                                      ->with('posts',$posts)
+                                      ->with('students',$students)
+                                      ->with('companies',$companies)
+                                      ->with('pending_users',$pending_users)
+                                      ->with('messages',$messages);
     }
 
     public function company_profile(){
@@ -54,7 +78,8 @@ class UsersController extends Controller
         $id = auth()->user()->id;
         $company_user = Company::where('user_id',$id)->first();
         $users = User::where('id',$id)->first();
-        $company_id = DB::table('companies')->where('user_id','=',$id)->select('id')->pluck('id')->first(); 
+        $company_id = Company::where('user_id','=',$id)->select('id')->pluck('id')->first();
+         
         $posts = Post::all();
         if($posts->count() > 0){
             $posts = Post::where('company_id',$company_id)->get();
@@ -68,8 +93,15 @@ class UsersController extends Controller
         $enrolls = Enroll::where('company_id',$company_id)->get();
         $user = Company::where('user_id',$id)->first();
 
-        return view('frontend.companies.update',compact(['id','user','company_user','posts', 'users', 'messages',
-            'unseen_messages','enrolls','company_id']));
+        return view('frontend.companies.update')->with('id',$id)
+                                                ->with('company_user',$company_user)
+                                                ->with('users',$users)
+                                                ->with('company_id',$company_id)
+                                                ->with('posts',$posts)
+                                                ->with('messages',$messages)
+                                                ->with('unseen_messages',$unseen_messages)
+                                                ->with('enrolls',$enrolls)
+                                                ->with('user',$user);
     }
 
     public function companySetting(Request $request, $id){
