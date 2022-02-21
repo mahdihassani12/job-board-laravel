@@ -36,7 +36,7 @@ class StudentsController extends Controller
     {
         $id = auth()->user()->id;
         $student_user = User::where('id', '=', $id)->first();
-        $student_id = DB::table('students')->where('user_id',$id)->select('id')->pluck('id')->first();
+        $student_id = Student::where('user_id',$id)->select('id')->pluck('id')->first();
         $user = Student::where('user_id',$id)->first();
         $skills = Skill::all();
         $documents = Document::where('student_id',$student_id)->orderby('id','DESC')->get();
@@ -51,8 +51,19 @@ class StudentsController extends Controller
         $unseen_messages = Message::where('student_id', '=', $student_id)->where('status', '=', 'unseen')
                                                               ->where('user_type','company')->get();
 
-        return view('frontend.users.update',
-               compact(['id', 'student_user', 'user', 'documents', 'references', 'experiences', 'departments', 'faculties','student_id','skills','messages', 'sent_messages', 'unseen_messages']));
+        return view('frontend.users.update')->with('id',$id)
+                                            ->with('student_user',$student_user)
+                                            ->with('student_id',$student_id)
+                                            ->with('user',$user)
+                                            ->with('skills',$skills)
+                                            ->with('documents',$documents)
+                                            ->with('references',$references)
+                                            ->with('experiences',$experiences)
+                                            ->with('departments',$departments)
+                                            ->with('faculties',$faculties)
+                                            ->with('messages',$messages)
+                                            ->with('sent_messages',$sent_messages)
+                                            ->with('unseen_messages',$unseen_messages);
     }
 
     /**

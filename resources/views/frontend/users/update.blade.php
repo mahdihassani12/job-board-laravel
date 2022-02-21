@@ -18,7 +18,7 @@
 			<p> {{ ($user && $user->bio) ? $user->bio : '' }} </p>
 		  </div>
 		</div>
-  </section> <!-- /section -->
+  	</section> <!-- /section -->
 
   <section class="main-body">
   	<div class="row">
@@ -716,9 +716,6 @@
     .new_row_added , .remove_ref_row{
     	margin-top: 30px;
     }
-	input[type=email]{
-		text-align:right !important;
-	}
 	.document_image img{
         width: 250px;
         height: auto;
@@ -943,12 +940,10 @@
 	    color: #007bff;
 	  }
   </style>
-<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
 @endsection
 
 @section('script')
 
-<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
 <script type="text/javascript">
    $(document).ready(function() {
 
@@ -1038,29 +1033,6 @@
         jQuery('.ref_remove').on('click',function(){
         	jQuery('.remove_ref_row').last().remove();
         });
-        
-        // HTML editor
-        $('#skills').summernote({
-        	height:200
-        });
-        $('#research').summernote({
-        	height:200
-        });
-        $('#achievements').summernote({
-        	height:200
-        });
-        $('.exp_desc').summernote({
-        	height:200
-        });
-
-
-        //select2
-        $(".skill_cat").select2({
-			placeholder: "انتخاب مهارت",
-		    tags: true,
-		    tokenSeparators: [',', ' '],
-		    dir: "rtl",
-		});
 
 		// checking education degree
 		jQuery('#education_level').change(function(){

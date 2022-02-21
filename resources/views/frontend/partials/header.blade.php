@@ -8,18 +8,21 @@ $setting = DB::table('settings')->first();
                 <div class="container-fluid container">
                     <div class="header_bottom_border">
                         <div class="row align-items-center">
-                            <div class="col-xl-3 col-lg-2">
+
+                            <div class="col-xl-2 col-lg-2">
                                 <div class="logo">
                                     @if($setting)
                                         @if($setting->logo)
                                             <a href="{{ route('index') }}">
-                                                <img src='{{ url("/uploads/logo/$setting->logo") }}' alt="Logo" style="width: 75px; height: auto; border-radius: 50%; margin-top: 10px;">
+                                                <img src='{{ url("/uploads/logo/$setting->logo") }}' 
+                                                     alt="Logo" 
+                                                     style="width: 100%; height: auto; object-fit: cover;">
                                             </a>
                                         @endif
                                     @endif
                                 </div>
                             </div>
-                            <div class="col-xl-6 col-lg-7">
+                            <div class="col-xl-7 col-lg-7">
                                 <div class="main-menu  d-none d-lg-block">
                                     <nav>
                                         <ul id="navigation">
@@ -62,9 +65,11 @@ $setting = DB::table('settings')->first();
                                     </div>
                                 </div>
                             </div>
+
                             <div class="col-12">
                                 <div class="mobile_menu d-block d-lg-none"></div>
                             </div>
+
                         </div>
                     </div>
 

@@ -414,4 +414,12 @@ list-style: decimal;
 @media (max-width: 320px){
     
 }
-
+input:focus,
+textarea:focus, 
+select:focus, 
+.form-control:focus{
+  box-shadow: unset !important;
+}
+.form-control, input, textarea, select{
+  text-align: right !important;
+}
