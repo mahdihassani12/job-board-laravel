@@ -3,7 +3,7 @@
 
 	<div class="container jobs_list">
 	    <div class="row">
-	        <div class="col-sm-9 col-md-10">
+	        <div class="col-sm-12 col-md-12">
 
 	        	<section>
 	        		

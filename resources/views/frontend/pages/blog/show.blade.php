@@ -6,7 +6,7 @@
 			
 			<h1>{{ $blog->title }}</h1>
 			<div class="featured_image">
-				<img src='{{ url("/uploads/posts/$blog->featured_image") }}'>
+				<img src='{{ url("public/uploads/posts/$blog->featured_image") }}'>
 			</div>
 			
 			<div class="categories">

@@ -20,9 +20,9 @@
                   
                   <div class="company_thumb">
                     @if($user->logo)
-                      <img src='{{ url("/uploads/company_meta/$user->logo") }}' alt="Admin" class="rounded-circle">
+                      <img src='{{ url("public/uploads/company_meta/$user->logo") }}' alt="Admin" class="rounded-circle">
                     @else
-                      <img src='{{ url("/uploads/images/author.png") }}' alt="Admin" class="rounded-circle" width="150">
+                      <img src='{{ url("public/uploads/images/author.png") }}' alt="Admin" class="rounded-circle" width="150">
                     @endif  
                   </div>
                     

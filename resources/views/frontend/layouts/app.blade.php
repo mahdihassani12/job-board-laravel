@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="{{ asset('public/frontend/css/gijgo.css') }}">
     <link rel="stylesheet" href="{{ asset('public/frontend/css/animate.min.css') }}">
     <link rel="stylesheet" href="{{ asset('public/frontend/css/slicknav.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/frontend/css/summernote-bs4.min.css') }}">
 
     <link rel="stylesheet" href="{{ asset('public/frontend/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('public/frontend/css/custom.css') }}">
@@ -60,6 +61,7 @@
     <script src="{{ asset('public/frontend/js/jquery.magnific-popup.min.js') }}"></script>
     <script src="{{ asset('public/frontend/js/plugins.js') }}"></script>
     <script src="{{ asset('public/frontend/js/gijgo.min.js') }}"></script>
+    <script src="{{ asset('public/frontend/js/summernote-bs4.min.js') }}"></script>
 
     <!--contact js-->
     <script src="{{ asset('public/frontend/js/contact.js') }}"></script>

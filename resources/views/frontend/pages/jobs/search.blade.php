@@ -91,9 +91,9 @@
                                             <div class="thumb">
                                                 @if($company_img)
                                                 <img 
-                                                src='{{url("/uploads/company_meta/$company_img")}}' alt="company logo">
+                                                src='{{url("public/uploads/company_meta/$company_img")}}' alt="company logo">
                                                 @else
-                                                <img src="{{ asset('/frontend/img/svg_icon/1.svg') }}" alt="">
+                                                <img src="{{ asset('public/frontend/img/svg_icon/1.svg') }}" alt="">
                                                 @endif
                                             </div>
                                             <div class="jobs_conetent">

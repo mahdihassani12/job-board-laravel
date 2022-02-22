@@ -39,9 +39,11 @@
 						<div class="single_candidates text-center">
 							<div class="thumb">
 								@if($company->logo)
-									<img src='{{ url("uploads/company_meta/$company->logo") }}' alt="">
+									<img src='{{ url("public/uploads/company_meta/$company->logo") }}' 
+										 alt="">
 								@else
-									<img src='{{ url("/uploads/images/author.png") }}' alt="Admin" class="rounded-circle" width="150">
+									<img src='{{ url("public/uploads/images/author.png") }}' 
+										 alt="Admin" class="rounded-circle" width="150">
 								@endif
 							</div>
 							<a href="{{ route('company.detail',$company->id) }}"><h4>{{ $company->name }}</h4></a>

@@ -421,7 +421,7 @@
 									<i class="fa fa-close" id="close_icon"></i>
 								</button>
 							 </form>
-		                    <img src='{{ url("/uploads/documents/$document->document_name") }}' class="myImg">
+		                    <img src='{{ url("public/uploads/documents/$document->document_name") }}' class="myImg">
 
 		                    @switch($document->document_type)
 		                        @case('uni_diploma')

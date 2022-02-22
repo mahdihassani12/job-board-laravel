@@ -17,7 +17,7 @@
                         <div class="single_jobs white-bg d-flex justify-content-between">
                             <div class="jobs_left d-flex align-items-center">
                                 <div class="thumb">
-                                    <img src="{{ asset('/frontend/img/svg_icon/1.svg') }}" alt="">
+                                    <img src="{{ asset('public/frontend/img/svg_icon/1.svg') }}" alt="">
                                 </div>
                                 <div class="jobs_conetent">
                                     <h4 class='jobs_title'>{{ $job->title }}</h4>
