@@ -2,7 +2,7 @@
 @section('main_content')
 <?php 
 	$user_id = auth()->user()->id;
-    $company_id = DB::table('companies')->where('user_id','=',$user_id)->select('id')->pluck('id')->first();
+  $company_id = DB::table('companies')->where('user_id','=',$user_id)->select('id')->pluck('id')->first();
 	$categories = DB::table('categories')->orderby('id','DESC')->get();
 ?>
 	<main class="create_job">
