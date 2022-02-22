@@ -335,7 +335,7 @@
 		                @endif
 
 		                <div class="row">
-						  <div class="col-sm-10">
+						  <div class="col-sm-12">
 							<label for="skills"> مهارت ها </label>
 							<textarea name="skills" id="skills" 
 									  class="form-control" rows="8">{{ $user ? $user->user_skills : '' }}</textarea>
@@ -344,7 +344,7 @@
 						<hr>
 						
 						<div class="row">
-						  <div class="col-sm-10">
+						  <div class="col-sm-12">
 							<label for="research"> تحقیقات </label>
 							<textarea name="research" id="research" 
 									  class="form-control" rows="8">{{ $user ? $user->research : '' }}</textarea>
@@ -353,7 +353,7 @@
 						<hr>
 						
 						<div class="row">
-						  <div class="col-sm-10">
+						  <div class="col-sm-12">
 							<label for="achievement"> دستاورد ها </label>
 							<textarea name="achievement" id="achievements" 
 									  class="form-control" rows="8">{{ $user ? $user->achievement : '' }}</textarea>
@@ -959,6 +959,9 @@
 			modal.css('display','none')
 		});
 
+		$('#skills, #achievements, #research').summernote({
+   			height:200
+   		});
 
         // adding new row to experience
 
