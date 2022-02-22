@@ -6,6 +6,50 @@
     <div class="box-header">
       <h3 class="box-title"> لیست شرکت ها </h3>
     </div>
+	
+	<div class="box-header">
+      <form>
+		<div class="row">
+			<div class="col-md-3">
+				<div class="form-group">
+					<input type="text" 
+						   class="form-control" 
+						   name="companyName" 
+						   placeholder="نام شرکت"
+						/>
+				</div>
+			</div>
+			
+			<div class="col-md-3">
+				<div class="form-group">
+					<input type="text" 
+						   class="form-control" 
+						   name="companyAddress" 
+						   placeholder="آدرس شرکت"
+						/>
+				</div>
+			</div>
+			
+			<div class="col-md-3">
+				<div class="form-group">
+					<select class="form-control" name="companyType">
+						<option value="">انتخاب نوعیت شرکت</option>
+						<option>دولتی</option>
+						<option>شخصی</option>
+						<option>موسسه</option>
+					</select>
+				</div>
+			</div>
+			
+			<div class="col-md-3">
+				<button class="btn btn-success" type="success">
+					فیلتر	
+				</button>
+			</div>	
+			
+		</div>
+	  </form>
+    </div>
 
     <!-- /.box-header -->
     <div class="box-body">

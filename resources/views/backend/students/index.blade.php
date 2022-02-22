@@ -9,6 +9,45 @@
         <h3 class="box-title"> لیست محصلین </h3>
       </div>
       <!-- /.box-header -->
+		
+	  <div class="box-header">
+        <form>
+			<div class="row">
+				<div class="col-md-3">
+					<div class="form-group">
+						<input type="text" 
+							   name="userName" 
+							   class="form-control"
+							   placeholder="نام محصل"
+							/>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="form-group">
+						<select name="userFaculites" class="form-control">
+							<option value="">انتخاب فاکولته</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="form-group">
+						<select name="userDepartment" class="form-control">
+							<option value="">انتخاب دیپارتمنت</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="form-group">
+						<button class="btn btn-success" type="submit">
+							فیلتر
+						</button>
+					</div>
+				</div>
+			</div> <!--/row-->
+		</form>         
+      </div>
+      <!-- /.box-header -->
+	  
       <div class="box-body">
         <table id="example1" class="table table-bordered table-striped">
           <thead>
