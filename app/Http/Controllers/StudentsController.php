@@ -116,8 +116,33 @@ class StudentsController extends Controller
     }
 
     public function getStudents(){
-        $students = Student::where('accepted','=','1')->orderby('id','DESC')->paginate(20);
-        return view('backend.students.accepted',compact('students'));
+
+        $users = Student::latest('students.created_at');
+        
+        if(request('userName')){
+            $users = $users->where('firstName','like','%'.request('userName').'%');
+        }
+
+        if(request('userFaculites')){
+            $users = $users
+                    ->join('faculties','students.faculty_id','=','faculties.id')
+                    ->where('students.faculty_id','=',request('userFaculites'))
+                    ->select('students.id','students.*');
+        }
+
+        if(request('userDepartment')){
+            $users = $users
+                    ->join('departments','students.department_id','=','departments.id')
+                    ->where('students.department_id','=',request('userDepartment'))
+                    ->select('students.id','students.*');
+        }
+
+        $users = $users->where('accepted','=','1')
+                       ->paginate(15);
+
+        $faculties = faculty::all();
+        $departments = department::all();
+        return view('backend.students.accepted',compact(['users','faculties','departments']));
     }
 
     /**

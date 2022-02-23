@@ -8,42 +8,51 @@
       <!-- /.box-header -->
 	  
 	  <div class="box-header">
-        <div class="row">
-			<div class="col-md-3">
-				<div class="form-group">
-					<input type="text" 
-						   name="userName" 
-						   class="form-control"
-						   placeholder="نام محصل"
-						/>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<div class="form-group">
-					<select name="userFaculites" class="form-control">
-						<option value="">انتخاب فاکولته</option>
-					</select>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<div class="form-group">
-					<select name="userDepartment" class="form-control">
-						<option value="">انتخاب دیپارتمنت</option>
-					</select>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<div class="form-group">
-					<button class="btn btn-success" type="submit">
-						فیلتر
-					</button>
-				</div>
-			</div>
-		</div> <!--/row-->
-      </div>
-      <!-- /.box-header -->
+    	<form>
+    			<div class="row">
+    				<div class="col-md-3">
+    					<div class="form-group">
+    						<input type="text" 
+    							   name="userName" 
+    							   class="form-control"
+    							   placeholder="نام محصل"
+    							/>
+    					</div>
+    				</div>
+    				<div class="col-md-3">
+    					<div class="form-group">
+    						<select name="userFaculites" class="form-control">
+    							<option value="">انتخاب فاکولته</option>
+                  @foreach($faculties as $faculty)
+                     <option value="{{ $faculty->id }}">{{ $faculty->name }}</option>
+                  @endforeach
+    						</select>
+    					</div>
+    				</div>
+    				<div class="col-md-3">
+    					<div class="form-group">
+    						<select name="userDepartment" class="form-control">
+    							<option value="">انتخاب دیپارتمنت</option>
+                  @foreach($departments as $department)
+                     <option value="{{ $department->id }}">{{ $department->name }}</option>
+                  @endforeach
+    						</select>
+    					</div>
+    				</div>
+    				<div class="col-md-3">
+    					<div class="form-group">
+    						<button class="btn btn-success" type="submit">
+    							فیلتر
+    						</button>
+    					</div>
+    				</div>
+    			</div> <!--/row-->
+
+    	</form>  
+    </div>
+    <!-- /.box-header -->
 	  
-      <div class="box-body">
+    <div class="box-body">
         <table id="example1" class="table table-bordered table-striped">
           <thead>
           <tr>
@@ -57,7 +66,7 @@
           </thead>
           <tbody>
 				
-				@foreach($students as $index => $user )
+				@foreach($users as $index => $user )
 					<tr>
 					  <td>{{ $index + 1 }}</td>
 					  <td>{{ $user->firstName }}</td>
@@ -85,7 +94,7 @@
     <!-- /.box-body -->
 
     <div class="box-footer">
-      {{ $students->links() }}
+      {{ $users->links() }}
     </div>
 
   </div>

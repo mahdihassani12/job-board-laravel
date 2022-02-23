@@ -34,9 +34,9 @@
 				<div class="form-group">
 					<select class="form-control" name="companyType">
 						<option value="">انتخاب نوعیت شرکت</option>
-						<option>دولتی</option>
-						<option>شخصی</option>
-						<option>موسسه</option>
+						<option value="دولتی">دولتی</option>
+						<option value="خصوصی">خصوصی</option>
+						<option value="موسسه">موسسه</option>
 					</select>
 				</div>
 			</div>

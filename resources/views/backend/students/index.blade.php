@@ -11,46 +11,53 @@
       <!-- /.box-header -->
 		
 	  <div class="box-header">
-        <form>
-			<div class="row">
-				<div class="col-md-3">
-					<div class="form-group">
-						<input type="text" 
-							   name="userName" 
-							   class="form-control"
-							   placeholder="نام محصل"
-							/>
-					</div>
-				</div>
-				<div class="col-md-3">
-					<div class="form-group">
-						<select name="userFaculites" class="form-control">
-							<option value="">انتخاب فاکولته</option>
-						</select>
-					</div>
-				</div>
-				<div class="col-md-3">
-					<div class="form-group">
-						<select name="userDepartment" class="form-control">
-							<option value="">انتخاب دیپارتمنت</option>
-						</select>
-					</div>
-				</div>
-				<div class="col-md-3">
-					<div class="form-group">
-						<button class="btn btn-success" type="submit">
-							فیلتر
-						</button>
-					</div>
-				</div>
-			</div> <!--/row-->
-		</form>         
+      <form>
+    			<div class="row">
+    				<div class="col-md-3">
+    					<div class="form-group">
+    						<input type="text" 
+    							   name="userName" 
+    							   class="form-control"
+    							   placeholder="نام محصل"
+    							/>
+    					</div>
+    				</div>
+    				<div class="col-md-3">
+    					<div class="form-group">
+    						<select name="userFaculites" class="form-control">
+    							<option value="">انتخاب فاکولته</option>
+                  @foreach($faculties as $faculty)
+                     <option value="{{ $faculty->id }}">{{ $faculty->name }}</option>
+                  @endforeach
+    						</select>
+    					</div>
+    				</div>
+    				<div class="col-md-3">
+    					<div class="form-group">
+    						<select name="userDepartment" class="form-control">
+    							<option value="">انتخاب دیپارتمنت</option>
+                  @foreach($departments as $department)
+                     <option value="{{ $department->id }}">{{ $department->name }}</option>
+                  @endforeach
+    						</select>
+    					</div>
+    				</div>
+    				<div class="col-md-3">
+    					<div class="form-group">
+    						<button class="btn btn-success" type="submit">
+    							فیلتر
+    						</button>
+    					</div>
+    				</div>
+    			</div> <!--/row-->
+
+    		</form>         
       </div>
       <!-- /.box-header -->
 	  
       <div class="box-body">
         <table id="example1" class="table table-bordered table-striped">
-          <thead>
+        <thead>
           <tr>
             <th> مشخصه </th>
             <th>نام</th>
@@ -61,35 +68,36 @@
             <th> پسورد </th>
             <th> عملیات </th>
           </tr>
-          </thead>
-          <tbody>
+        </thead>
+        <tbody>
 				
 				@foreach($users as $index => $user )
-					<tr>
-					  <td>{{ $index + 1 }}</td>
-					  <td>{{ $user->name }}</td>
-					  <td>{{ $user->student->lastName }}</td>
-					  <td>{{ $user->email }}</td>
-					  <td>{{ $user->student->faculty->name }}</td>
-					  <td>{{ $user->student->department->name }}</td>
-					  <td>{{ $user->primary_password }}</td>
+          <tr>
+            <td>{{ $index + 1 }}</td>
+            <td>{{ $user->name }}</td>
+            <td>{{ $user->student->lastName }}</td>
+            <td>{{ $user->email }}</td>
+            <td>{{ $user->student->faculty->name }}</td>
+            <td>{{ $user->student->department->name }}</td>
+            <td>{{ $user->primary_password }}</td>
             <td class="operation">
               
-                  <a href="{{ route('editStudentList',$user->id) }}">
-                    <i class="fa fa-edit"></i>
-                  </a>&nbsp 
-                  /
-                  <form method="post" action="{{ route('deleteStudentList',$user->id) }}">
-                    @csrf
-                    @method('DELETE')
-					<input type="hidden" name="student_id" value="{{ $user->student->id }}">
-                    <button type="submit">
-          				<i class="fa fa-trash"></i>
-          			</button>
-                  </form>
+              <a href="{{ route('editStudentList',$user->id) }}">
+                <i class="fa fa-edit"></i>
+              </a>&nbsp 
+              /
+              <form method="post" action="{{ route('deleteStudentList',$user->id) }}">
+                @csrf
+                @method('DELETE')
+                <input type="hidden" name="student_id" value="{{ $user->student->id }}">
+                <button type="submit">
+                  <i class="fa fa-trash"></i>
+                </button>
+              </form>
+
             </td>
-					</tr>
-				@endforeach
+          </tr>
+        @endforeach
 				
         </tbody>
 
