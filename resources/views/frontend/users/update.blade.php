@@ -25,9 +25,9 @@
 
   		<div class="col-lg-3 col-md-3">
   			<div class="side_nav">
-  				<ul class="nav nav-tabs">
-		          	<li class="active">
-		          		<a data-toggle="tab" href="#home">
+  				<ul class="nav nav-tabs" id="myTab">
+		          	<li>
+		          		<a data-toggle="tab" href="#home" class="active show">
 		          			<i class="fa fa-user"></i>
 		          			معلومات شخصی
 			          	</a>
@@ -876,11 +876,11 @@
 	  	border-right: unset;
     	border-left: unset;
 	  }
-	  .side_nav ul li.active{
+/*	  .side_nav ul li.active{
 	  	border-right: 2px solid #007bff;
     	border-left: 2px solid #007bff;
-	  }
-	  .side_nav ul li.active a , .side_nav ul li.active i{
+	  }*/
+	  .side_nav ul li.active a , .side_nav ul li a.active i{
 	  	color: #007bff;
 	  }
 	  .side_nav ul li a{
@@ -1040,11 +1040,17 @@
 				jQuery('.master').css('display','none');
 			}
 		});
-		
-		jQuery('.has-dropdown > a').click(function(){
-			jQuery('.dropdown').toggle(500);
+
+		$('a[data-toggle="tab"]').on('show.bs.tab', function(e) {
+			localStorage.setItem('activeTab', $(e.target).attr('href'));
 		});
 
+		var activeTab = localStorage.getItem('activeTab');
+
+		if(activeTab){
+			$('#myTab a[href="' + activeTab + '"]').tab('show');
+		}
+		
     });
 </script>
 @endsection
