@@ -6,6 +6,7 @@ use Auth;
 use DB;
 use Excel;
 use Session;
+use \Exception;
 use App\Company;
 use App\User;
 use App\Student;
@@ -147,9 +148,10 @@ class LoginController extends Controller
         $user->primary_password = $pass;
         $user->password = bcrypt($pass);
         $user -> status = 'publish';
-
+        
         try {
             DB::beginTransaction();    
+            
             $user -> save();
             $id = $user ->id;
             $student -> user_id = $id;
@@ -162,6 +164,13 @@ class LoginController extends Controller
             $student -> uni_enrolled_year = $data['uni_enrolled_year'];            
             $student -> uni_graduation_year = $data['uni_graduation_year'];            
             $student -> save();
+
+            $details  = [
+                'email' => $data['email'],
+                'password' => $pass
+            ];
+            \Mail::to($data['email'])->send(new \App\Mail\mailStudents($details ));
+
             DB::commit();
         } catch (\Exception $e) {
             DB::rollback();
@@ -177,7 +186,8 @@ class LoginController extends Controller
     public function addStudent(){
         $faculties = faculty::all();
         $departments = department::all();
-        return view('backend.students.add')->with('faculties',$faculties)->with('departments',$departments);
+        return view('backend.students.add')->with('faculties',$faculties)
+        ->with('departments',$departments);
     }
 
 

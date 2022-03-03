@@ -39,7 +39,7 @@ class adminController extends Controller
     public function students_lists(){
 
 
-        $users = User::orderby('id','ASC');
+        $users = User::orderby('id','DESC');
         
         if(request('userName')){
             $users = $users->where('name','like','%'.request('userName').'%');
