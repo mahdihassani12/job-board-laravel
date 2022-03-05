@@ -6,7 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'App\\Blog' => $baseDir . '/app/Blog.php',
     'App\\Company' => $baseDir . '/app/Company.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Document' => $baseDir . '/app/Document.php',
@@ -48,6 +47,7 @@ return array(
     'App\\Http\\Middleware\\UserAuthenticated' => $baseDir . '/app/Http/Middleware/UserAuthenticated.php',
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
     'App\\Imports\\UsersImport' => $baseDir . '/app/Imports/UsersImport.php',
+    'App\\Mail\\mailStudents' => $baseDir . '/app/Mail/mailStudents.php',
     'App\\Message' => $baseDir . '/app/Message.php',
     'App\\Post' => $baseDir . '/app/Post.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
@@ -809,6 +809,7 @@ return array(
     'Faker\\Provider\\nl_BE\\Payment' => $vendorDir . '/fzaninotto/faker/src/Faker/Provider/nl_BE/Payment.php',
     'Faker\\Provider\\nl_BE\\Person' => $vendorDir . '/fzaninotto/faker/src/Faker/Provider/nl_BE/Person.php',
     'Faker\\Provider\\nl_BE\\PhoneNumber' => $vendorDir . '/fzaninotto/faker/src/Faker/Provider/nl_BE/PhoneNumber.php',
+    'Faker\\Provider\\nl_BE\\Text' => $vendorDir . '/fzaninotto/faker/src/Faker/Provider/nl_BE/Text.php',
     'Faker\\Provider\\nl_NL\\Address' => $vendorDir . '/fzaninotto/faker/src/Faker/Provider/nl_NL/Address.php',
     'Faker\\Provider\\nl_NL\\Color' => $vendorDir . '/fzaninotto/faker/src/Faker/Provider/nl_NL/Color.php',
     'Faker\\Provider\\nl_NL\\Company' => $vendorDir . '/fzaninotto/faker/src/Faker/Provider/nl_NL/Company.php',
