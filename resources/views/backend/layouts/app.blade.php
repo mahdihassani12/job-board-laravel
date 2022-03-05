@@ -54,6 +54,7 @@
 <!-- AdminLTE App -->
 <script src="{{ asset('public/backend/js/adminlte.min.js') }}"></script>
 <script src="{{ asset('public/backend/js/select2.min.js') }}"></script>
+<script src="{{ asset('public/backend/js/jquery.tableToExcel.js') }}"></script>
 <script src="{{ asset('public/backend/custom.js') }}"></script>
 @yield('script')
 </body>

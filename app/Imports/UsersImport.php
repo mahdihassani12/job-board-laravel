@@ -50,6 +50,13 @@ class UsersImport implements ToCollection, WithHeadingRow
                 'department_id' => $this->department_id,
                 'season'    => $this->season,
             ]);
+
+            $details  = [
+                'email' => $row['email'],
+                'password' => $pass
+            ];
+            
+            \Mail::to($row['email'])->send(new \App\Mail\mailStudents($details ));
         }
 
     }

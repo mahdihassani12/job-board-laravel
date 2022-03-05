@@ -53,6 +53,7 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function 
     Route::get('add_student','LoginController@addStudent')->name('add_student');
     Route::get('getImport','LoginController@getImport')->name('getImport');
     Route::post('importExcel','LoginController@importExcel')->name('importExcel');
+    Route::get('ExportExcel','LoginController@ExportExcel')->name('ExportExcel');
     Route::resource('blog','backend\blogController');
     Route::resource('info','contactInfoController');
     Route::put('updateCompany/{id}','UsersController@updateCred')->name('updateCred');

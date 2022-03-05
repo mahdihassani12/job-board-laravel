@@ -14,6 +14,7 @@ use App\faculty;
 use App\department;
 use Illuminate\Support\Str;
 use App\Imports\UsersImport;
+use App\Exports\UsersExport;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -316,6 +317,11 @@ class LoginController extends Controller
             return redirect()->back()->with('error','عملیات انجام نشد!');
         }
 
+    }
+
+    public function ExportExcel() 
+    {
+        return Excel::download(new UsersExport, 'students.xlsx');
     }
     
     public function updateSetting(Request $request,$id)
