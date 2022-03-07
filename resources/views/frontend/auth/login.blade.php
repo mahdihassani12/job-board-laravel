@@ -40,6 +40,10 @@
   		position: absolute;
   		bottom: 0;
   	}
+  	.close{
+		font-size: 30px;
+    margin-right: 5px;
+	}
 	input{
 		text-align:right !important;
 	}

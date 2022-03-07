@@ -423,3 +423,12 @@ select:focus,
 .form-control, input, textarea, select{
   text-align: right !important;
 }
+button.close{
+  font-size: 30px !important;
+}
+.btn:focus{
+  box-shadow: unset !important;
+}
+.table td, .table th{
+  min-width: 140px;
+}

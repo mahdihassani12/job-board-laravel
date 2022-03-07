@@ -48,6 +48,10 @@
 	input , select{
 		text-align:right !important;
 	}
+	.close{
+		font-size: 30px;
+    margin-right: 5px;
+	}
   </style>
 @endsection
 
