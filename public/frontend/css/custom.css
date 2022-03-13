@@ -306,25 +306,43 @@ float: left;
 list-style: decimal;
 }
 .close {
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-    color: #222;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-  }
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  color: #222;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
 
-  .footer .footer_top{
-    padding-top: 50px;
-    padding-bottom: 40px;
-  }
-  .footer .copy-right_text .copy_right, .footer .footer_top .footer_widget .newsletter_text{
-    font-size: 16px;
-    font-family: nasim !important;
-  }
+.footer .footer_top{
+  padding-top: 50px;
+  padding-bottom: 40px;
+}
+.footer .copy-right_text .copy_right, .footer .footer_top .footer_widget .newsletter_text{
+  font-size: 16px;
+  font-family: nasim !important;
+}
+input:focus,
+textarea:focus, 
+select:focus, 
+.form-control:focus{
+  box-shadow: unset !important;
+}
+.form-control, input, textarea, select{
+  text-align: right !important;
+}
+button.close{
+  font-size: 30px !important;
+}
+.btn:focus{
+  box-shadow: unset !important;
+}
+.table td, .table th{
+  min-width: 140px;
+}
 
-/** Responsive styles **/
+/****************************** Responsive styles *******************************************/
 
 @media (min-width: 1200px) {
     
@@ -413,22 +431,4 @@ list-style: decimal;
 }
 @media (max-width: 320px){
     
-}
-input:focus,
-textarea:focus, 
-select:focus, 
-.form-control:focus{
-  box-shadow: unset !important;
-}
-.form-control, input, textarea, select{
-  text-align: right !important;
-}
-button.close{
-  font-size: 30px !important;
-}
-.btn:focus{
-  box-shadow: unset !important;
-}
-.table td, .table th{
-  min-width: 140px;
 }

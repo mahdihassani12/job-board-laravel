@@ -12,7 +12,7 @@
 					@csrf
 						<div class="row">
 								
-							<div class="col form-group">
+							<div class="col-md-3 col-sm-6 col-xs-12 form-group">
 								<select class='faculty form-control' name="faculty">
 									<option value="">انتخاب فاکولته</option>
 									@foreach($faculties as $row)
@@ -21,7 +21,7 @@
 								</select>
 							</div> <!-- /div  -->
 							
-							<div class="col form-group">
+							<div class="col-md-3 col-sm-6 col-xs-12 form-group">
 								<select class='department form-control' name="department">
 									<option value="">انتخاب دیپارتمنت</option>
 									@foreach($departments as $row)
@@ -30,23 +30,28 @@
 								</select>
 							</div> <!-- /div  -->
 							
-							<div class="col form-group">
+							<div class="col-md-3 col-sm-6 col-xs-12 form-group">
 								<select class='gender form-control' name="gender">
 									<option value="">انتخاب جنسیت</option>
 									<option value='مرد'>مرد</option>
 									<option value='زن'>زن</option>
 								</select>
 							</div> <!-- /div  -->
-							<div class="col form-group">
-								<select class='uni_graduation_year form-control' name='uni_graduation_year'>
+
+							<div class="col-md-3 col-sm-6 col-xs-12 form-group">
+								<select class='uni_graduation_year form-control' 
+								        name='uni_graduation_year'>
 									<option value="">سال فراغت</option>
 									<?php for ($year=2000; $year <= date("Y"); $year++): ?>
 									  <option value="<?=$year;?>"><?=$year;?></option>
 									<?php endfor; ?>
 								</select>
 							</div><!-- /div  -->
-							<div class="col form-group">
-								<input type="submit" value="فیلتر" class="btn btn-success form-control">
+
+							<div class="col-md-12 form-group text-left">
+								<input type="submit" 
+									   value="فیلتر" 
+									   class="btn btn-success">
 							</div><!-- /div  -->
 							
 						</div> <!-- /row  -->

@@ -11,13 +11,24 @@
 					<form method="post" action="{{ route('companiesSearch') }}">
 						@csrf
 						<div class="row">
-							<div class="col form-group">
-								<input type="text" name="name" class="form-control" placeholder="نام شرکت" autocomplete="off">
+
+							<div class="col-md-3 col-sm-6 col-xs-12 form-group">
+								<input type="text" 
+								       name="name" 
+								       class="form-control" 
+								       placeholder="نام شرکت" 
+								       autocomplete="off" />
 							</div><!-- /div  -->
-							<div class="col form-group">
-								<input type="text" name="address" class="form-control" placeholder="آدرس شرکت" autocomplete="off">
+
+							<div class="col-md-3 col-sm-6 col-xs-12 form-group">
+								<input type="text" 
+								       name="address" 
+								       class="form-control" 
+								       placeholder="آدرس شرکت" 
+								       autocomplete="off" />
 							</div><!-- /div  -->
-							<div class="col form-group">
+
+							<div class="col-md-3 col-sm-6 col-xs-12 form-group">
 								<select name="base_type" class="form-control base_type">
 									<option value="">انتخاب نوعیت</option>
 									<option value="دولتی"> دولتی </option>
@@ -25,9 +36,13 @@
 									<option value="موسسه">موسسه</option>
 								</select>
 							</div>
-							<div class="col form-group">
-								<input type="submit" value="جستجو" class="btn btn-success form-control">
+
+							<div class="col-md-3 col-sm-6 col-xs-12 form-group">
+								<input type="submit" 
+								       value="جستجو" 
+								       class="btn btn-success form-control" />
 							</div><!-- /div  -->
+
 						</div><!-- /row  -->
 					</form>
 				</div><!-- /div  -->
